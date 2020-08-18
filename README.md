@@ -1,43 +1,22 @@
-# Angular 8 JWT Authentication example
+# Cadastro de Pessoa
 
-For more detail, please visit:
-> [Angular 8 JWT Authentication with HttpInterceptor and Router](https://bezkoder.com/angular-jwt-authentication/)
+Esta aplicação de Front end foi criada utilizando angular 8, NodeJS v.12.7.0, Npm v. 6.10.0.
 
-## With Spring Boot back-end
+A aplicação está hospedada na nuvem no endereço: https://cadpessoa-app.herokuapp.com
 
-> [Angular 8 + Spring Boot: JWT Authentication & Authorization example](https://bezkoder.com/angular-spring-boot-jwt-auth/)
+Para instalar aplicação front-end, é necessário baixar o pacote de instalação do back-end no link:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+    https://github.com/welsson/back-end-cadpessoa
 
-## With Node.js Express back-end
+Altere o endereço de comunicação para a API do Back end para http://localhost:8080 nos arquivos src/_services/auth.service.ts, src/_services/pessoa.service.ts, src/_services/user.service.ts
 
-> [Node.js Express + Angular 8: JWT Authentication & Authorization example](https://bezkoder.com/node-js-express-angular-jwt-auth/)
+Abra o CMD apontando para a pasta raiz do projeto
 
-Open `app/_helpers/auth.interceptor.js`, modify the code to work with **x-access-token** like this:
-```js
-...
+Execute o comando 'ng serve'
 
-// const TOKEN_HEADER_KEY = 'Authorization'; // for Spring Boot back-end
-const TOKEN_HEADER_KEY = 'x-access-token';   // for Node.js Express back-end
+Digite a URL: http://localhost:4200
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
-  ...
+Faça o login na aplicação com o usuário e senha abaixo:
 
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    ...
-    if (token != null) {
-      // for Spring Boot back-end
-      // authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
-
-      // for Node.js Express back-end
-      authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, token) });
-    }
-    return next.handle(authReq);
-  }
-}
-
-...
-```
-
-Run `ng serve --port 8081` for a dev server. Navigate to `http://localhost:8081/`.
+Login:  admin
+Senha:  123
