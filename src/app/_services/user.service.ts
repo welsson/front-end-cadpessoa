@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = 'https://cadpessoa-app.herokuapp.com/api/test/';
+const API_URL = 'https://cadpessoa.herokuapp.com/api/test/';
 
 @Injectable({
   providedIn: 'root'

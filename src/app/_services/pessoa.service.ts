@@ -8,7 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const PESSOA_API = 'https://cadpessoa-app.herokuapp.com/api/pessoas';
+const PESSOA_API = 'https://cadpessoa.herokuapp.com/api/pessoas';
 
 @Injectable({
   providedIn: 'root'
