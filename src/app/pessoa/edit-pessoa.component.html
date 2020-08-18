@@ -1,0 +1,89 @@
+<section class="grey-text w-responsive mx-auto p-5">
+  <form (ngSubmit)="update()"  #detailCustomerForm="ngForm">
+      <h4 class="h4 mb-4 text-center"><span class="badge badge-light ">Editar Cadastro de {{pessoa.nome}}</span></h4>
+      <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" required placeholder="Nome da pessoa" 
+          [(ngModel)]="pessoa.nome" name="nome" #nome="ngModel">
+          <div [hidden]="nome.valid || nome.pristine"
+               class="alert alert-danger">
+               Favor digitar o Nome
+          </div>
+        </div>
+        
+        <div class="form-group">Sexo
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input"
+            value="F"
+            id="sexoF" mdbInput
+            [(ngModel)]="pessoa.sexo" name="sexo" #sexo="ngModel">
+            >
+            <label class="custom-control-label" for="sexoF">Feminino</label>
+          </div>
+          
+          <!-- Default checked -->
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input"
+             id="sexoM" checked mdbInput value="M"
+             [(ngModel)]="pessoa.sexo" name="sexo" #sexo="ngModel">
+             >
+            <label class="custom-control-label"
+             for="sexoM">Masculino</label>
+          </div>
+                  </div>
+        
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" required placeholder="E-mail" 
+          [(ngModel)]="pessoa.email" name="email" #email="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="text"
+            mask="00/00/0000"
+            class="form-control" id="password" required placeholder="Data de Nascimento" 
+            [(ngModel)]="pessoa.dataNascimento" name="dataNascimento" #dataNascimento="ngModel">
+            <div [hidden]="dataNascimento.valid || dataNascimento.pristine"
+                 class="alert alert-danger">
+                Favor digitar a data de nascimento
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="naturalidade">Naturalidade</label>
+            <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade" 
+            [(ngModel)]="pessoa.naturalidade" name="naturalidade" #naturalidade="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="nacionalidade">Nacionalidade</label>
+            <input type="text" class="form-control" id="nacionalidade"  placeholder="Nacionalidade" 
+            [(ngModel)]="pessoa.nacionalidade" name="nacionalidade" #nacionalidade="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text"
+            mask="000.000.000-00"
+            class="form-control" id="cpf" required placeholder="CPF" 
+            [(ngModel)]="pessoa.cpf" name="cpf" #cpf="ngModel">
+            <div [hidden]="cpf.valid || cpf.pristine"
+                 class="alert alert-danger">
+                Favor digitar o cpf
+            </div>
+          </div>
+
+
+
+    <div  class="btn-group btn-group-sm">
+      
+      <button type="submit" class="btn btn-info">Atualizar</button>&nbsp;
+
+      <button type="button" class="btn btn-info" (click)="goBack()">Voltar</button>
+
+    </div>
+
+    
+  </form>
+</section>

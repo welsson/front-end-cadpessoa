@@ -1,0 +1,36 @@
+<section class="grey-text w-responsive mx-auto p-5">    
+  <h2 class="h4 mb-4 text-center font-weight-bold"> Lista de Pessoas</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Naturalidade</th>
+      <th>Nacionalidade</th>
+      <th>Data Cadastro</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pessoa of pessoas; let i = index;">
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.email}}</td>
+      <td>{{pessoa.naturalidade}}</td>
+      <td>{{pessoa.nacionalidade}}</td>
+      <td>{{pessoa.dataCadastro}}</td>
+      <td>
+        <div class="btn-group btn-group-sm">
+          <button class="btn btn-info " [routerLink]="['/edit-pessoa', pessoa.id]" style="margin-left: 20px;"> Editar</button>
+        </div>
+        <div class="btn-group btn-group-sm">
+          <button class="btn btn-info " (click)="deletePessoa(pessoa)" style="margin-left: 20px;"> Excluir</button>
+        </div>
+
+      </td> 
+    </tr>
+    </tbody>
+  </table>
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-info " [routerLink]="['/add-pessoa']" style="margin-left: 20px;">Cadastrar Pessoa</button>
+  </div>
+
+</section>
