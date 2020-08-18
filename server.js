@@ -9,4 +9,4 @@ app.get('/*', function(req, res) {
 res.sendFile(path.join(`${__dirname}/dist/${nameApp}/index.html`));
 });
 // Porta padrão do Heroku
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 3000);
